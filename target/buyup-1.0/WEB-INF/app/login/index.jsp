@@ -4,7 +4,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Castell - Ingresar</title>
+        <title>BuyUP - Ingresar</title>
         <%@include file="/public/header.jsp" %>
     </head>
     <body class="login">
@@ -17,18 +17,20 @@
             </div>
  
             <form class="form-signin" role="form" action="<%=request.getContextPath()%>/j_spring_security_check" method="POST" >
-                <h2 class="form-signin-heading text-center">Castell CRM</h2>
+                <div class="row">
+                    <div style="width: 400px; margin: 10px;">
 
+                        <h2 class="form-signin-heading text-center">Sistema CRM</h2>
+                        <input style="margin: 10px;" type="email" class="form-control" placeholder="Correo" required="" autofocus="" name="j_username">
+                        <input style="margin: 10px;" type="password" class="form-control" placeholder="Contraseña" required="" name="j_password">
 
-                <input type="email" class="form-control" placeholder="Correo" required="" autofocus="" name="j_username">
+                        <c:if test="${loginError}">
+                            <p style="margin: 10px;" class="text-danger text-center">Usuario y/o contraseña incorrectos.</p>
+                        </c:if>
 
-                <input type="password" class="form-control" placeholder="Contraseña" required="" name="j_password">
-
-                <c:if test="${loginError}">
-                    <p class="text-danger text-center">Usuario y/o contraseña incorrectos.</p>
-                </c:if>
-
-                <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
+                            <button style="margin: 10px;" class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
+                    </div>
+                </div>
             </form>
                 
         <%@include file="/public/footer.jsp" %>
