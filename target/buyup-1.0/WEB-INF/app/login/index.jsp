@@ -7,34 +7,41 @@
         <title>BuyUP - Ingresar</title>
         <%@include file="/public/header.jsp" %>
     </head>
-    <body class="login">
+    <body>
 
-        <div class="container col-md-12">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12 cabecera">
                     <img style="margin: 0px 100px 10px;" width="150px;" src="<%=request.getContextPath()%>/images/buyup.png" />
                 </div>    
             </div>
- 
-            <form class="form-signin" role="form" action="<%=request.getContextPath()%>/j_spring_security_check" method="POST" >
-                <div class="row">
-                    <div style="width: 400px; margin: 10px;">
+            <div class="row row-centered">
 
-                        <h2 class="form-signin-heading text-center">Sistema CRM</h2>
-                        <input style="margin: 10px;" type="email" class="form-control" placeholder="Correo" required="" autofocus="" name="j_username">
-                        <input style="margin: 10px;" type="password" class="form-control" placeholder="Contraseña" required="" name="j_password">
+                <form role="form" action="<%=request.getContextPath()%>/j_spring_security_check" method="POST" >
+
+                    <div class="col-sm-6 col-md-6 col-centered" style="width: 400px; text-align: center; margin-left: auto; margin-right: auto;">
+
+                        <h2 style="margin-bottom: 50px;" class="form-signin-heading text-center">Ingreso al CRM</h2>
+                        <input style="margin-bottom: 10px;" type="email" class="form-control" placeholder="Correo" required="" autofocus="" name="j_username">
+                        <input style="margin-bottom: 10px;" type="password" class="form-control" placeholder="Contraseña" required="" name="j_password">
 
                         <c:if test="${loginError}">
-                            <p style="margin: 10px;" class="text-danger text-center">Usuario y/o contraseña incorrectos.</p>
+                            <p style="margin-bottom: 10px;" class="text-danger text-center">Usuario y/o contraseña incorrectos.</p>
                         </c:if>
 
-                            <button style="margin: 10px;" class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
+                        <button style="margin-bottom: 10px;" class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
                     </div>
-                </div>
-            </form>
-                
-        <%@include file="/public/footer.jsp" %>
+                  
+                </form>
+
+
+            </div>
+
+
+
+
+            <%@include file="/public/footer.jsp" %>
         </div>
     </body>
-    
+
 </html>
